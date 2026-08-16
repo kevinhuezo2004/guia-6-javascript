@@ -1,11 +1,14 @@
 const containerArreglo = document.querySelector("#idContainerArreglo");
 const containerArregladoOrdenado = document.querySelector("#idContainerArregloOrdenado");
+const containerArregloDescendente = document.querySelector("#idContainerArregloDescendente")
 
+const btnOrdenarDescendente = document.querySelector("#idBtnOrdenarDescendente");
 const btnAgregar = document.querySelector("#idBtnAgregar");
 const btnOrdenar = document.querySelector("#idBtnOrdenar");
 
 btnAgregar.addEventListener("click", agregarElemento);
 btnOrdenar.addEventListener("click", ordenarElementos);
+btnOrdenarDescendente.addEventListener("click", OrdenarDescendente);
 
 let arreglo = new Array();
 
@@ -41,4 +44,19 @@ function ordenarElementos(){
 
         containerArregladoOrdenado.insertAdjacentElement("beforeend", caja);
     }
+}   
+
+function OrdenarDescendente(){
+    for (let i of arreglo.sort((a, b) => b - a)){
+        let caja = document.createElement("div");
+        caja.className = "col-md-1 colum-green";
+
+        let valor = document.createElement("h3");
+        valor.textContent = i;
+
+        caja.appendChild(valor);
+
+        containerArregloDescendente.insertAdjacentElement("beforeend", caja);
+    }
 }
+

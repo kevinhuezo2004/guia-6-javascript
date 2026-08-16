@@ -69,7 +69,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 table += `<td>${apellidos}</td>`;
                 table += `</tr>`;
             }
-
             table += "</tbody>";
             table += "</table>";
             containerEstudiantes.innerHTML = table;
